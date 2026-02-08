@@ -23,6 +23,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Shimmer } from "~/components/ai-elements/shimmer";
 import { useEffect, useState, Suspense, useRef } from "react";
 import { cn } from "~/lib/utils";
+import Link from "next/link";
 
 const loadingMessages = [
   "Analyzing skeletal structure...",
@@ -75,7 +76,9 @@ function HeroUpload({ onUpload }: { onUpload: (files: File[]) => void }) {
             <span>Bone Anomaly Detection AI</span>
           </div>
           <h1 className="text-5xl md:text-6xl font-semibold tracking-tight text-zinc-900 dark:text-zinc-100">
-            Osteo Analysis
+            <Link href="https://github.com/Richieparrish/osteo" target="_blank" rel="noopener noreferrer">
+              Osteo Analysis
+            </Link>
           </h1>
           <p className="text-xl text-zinc-500 font-light max-w-xl mx-auto dark:text-zinc-400">
             Upload a skeletal X-ray to instantly identify fractures, osteoarthritis, and other conditions.
@@ -224,10 +227,10 @@ function ChatInterface() {
     <div className="flex h-screen w-full flex-col bg-background text-foreground">
       {messages.length > 0 && (
         <header className="fixed top-0 left-0 right-0 z-50 flex items-center justify-center h-14 bg-background/80 backdrop-blur-sm border-b border-border/50">
-          <div className="flex items-center gap-2">
+          <Link href="https://github.com/Richieparrish/osteo" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
             <Activity className="size-4 text-emerald-500" />
             <span className="font-semibold text-sm">Osteo AI</span>
-          </div>
+          </Link>
         </header>
       )}
       <Conversation>
